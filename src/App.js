@@ -1,8 +1,20 @@
+import { createContext, useState } from "react";
+import Homepage from "./components/homepage/Homepage";
+export const UserContext = createContext([]);
 function App() {
+  const defaultUser = {
+    name:"",
+    image:"",
+    email:"",
+    phone:""
+  }
+  const [user , setUser] = useState(defaultUser);
   return (
-    <div className="App">
-      
-    </div>
+    <UserContext.Provider value={[user , setUser]}>
+      <div className="App">
+        <Homepage></Homepage>
+      </div>
+    </UserContext.Provider>
   );
 }
 

@@ -1,0 +1,23 @@
+.links{
+    text-decoration: none;
+}
+
+.headerMainDiv{
+    display:flex;
+    padding:1rem;
+}
+
+.headerLeftSide{
+    text-align:left;
+    width:20%;
+}
+
+.headerLeftSide h2{
+    color:coral;
+}
+
+.headerRightPart{
+    text-align:right;
+    width:80%;
+    margin: 1.25rem;
+}
