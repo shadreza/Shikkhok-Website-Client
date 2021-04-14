@@ -1,0 +1,10 @@
+.inputBoxWritingPart{
+    font-size:18px;
+    width:300px;
+}
+
+.searchButton{
+    height: 2rem;
+    position: relative;
+    top: -2.5px;
+}
