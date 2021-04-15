@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../header/Header';
+import ProductsGallery from '../ProductsGallery/ProductsGallery';
 import SearchBox from '../SearchBox/SearchBox';
 import './Homepage.css'
 
 const Homepage = () => {
     return (
         <div>
-            <Header></Header>
             <SearchBox></SearchBox>
+            <ProductsGallery></ProductsGallery>
         </div>
     );
 };

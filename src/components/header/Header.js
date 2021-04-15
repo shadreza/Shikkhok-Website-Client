@@ -17,6 +17,8 @@ import UserInfoPage from '../UserInfoPage/UserInfoPage';
 
 const Header = () => {
 
+    console.log("in header")
+
     const currentUser = useContext(UserContext);
     return (
         <Router>
@@ -78,6 +80,9 @@ const Header = () => {
                 </Route>
                 <Route path="/userInfoPage">
                     <UserInfoPage></UserInfoPage>
+                </Route>
+                <Route path="/">
+                    <Homepage></Homepage>
                 </Route>
             </Switch>
             

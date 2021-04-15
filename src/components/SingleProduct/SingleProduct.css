@@ -1,0 +1,13 @@
+.footerOfProduct{
+    display:flex;
+}
+
+.priceOfPrd{
+    width:60%;
+    text-align:left;
+}
+
+.btnOfPrdBuying{
+    width:40%;
+    text-align:right;
+}
