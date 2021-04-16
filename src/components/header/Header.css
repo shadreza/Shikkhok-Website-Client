@@ -21,3 +21,16 @@
     width:80%;
     margin: 1.25rem;
 }
+
+.userImage{
+    width:60px;
+    border-radius: 100%;
+    position:relative;
+    top: -12px;
+}
+
+.navlinks{
+    display:flex;
+    width: 100%;
+    justify-content: flex-end;
+}

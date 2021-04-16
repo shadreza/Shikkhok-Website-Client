@@ -1,13 +1,14 @@
-.loginPageMainDiv{
-    display: flex;
+.userInfoMainDiv{
+    display:flex;
     justify-content: center;
-    margin: 4rem auto;
+    margin: 2rem auto;
 }
 
-.loginPart{
+.userInfo{
     text-align: center;
     background: coral;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 20px;
     color:midnightblue;
 }
+

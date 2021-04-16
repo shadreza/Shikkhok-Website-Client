@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './LoginPage.css';
 import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
@@ -12,24 +13,33 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const LoginPage = () => {
 
-    const headerVariable = useContext(HeaderStayingContext);
+    let userData = {
+        name: "" ,
+        image: "" ,
+        email: "" ,
+        isLoggedInOrNot : false
+    }
 
     const user = useContext(UserContext);
     let history = useHistory();
+
+    if(user[0].isLoggedInOrNot === true) {
+        history.replace('/');
+    }
+
     const handleContinueWithGoogleButton = () => {
-        alert('clicked')
         firebase.auth().signInWithPopup(googleProvider)
         .then(response => {
             const {displayName , email , photoURL} = response.user;
             console.log(response.user);
-            const userData = {
+            userData = {
                 name: displayName ,
-                email: email ,
                 image: photoURL ,
+                email: email ,
                 isLoggedInOrNot : true
             }
-            UserContext[1](userData);
-            history.replace('/');
+            user[1](userData);
+            // history.goBack();
         })
         .catch(err => {
             alert(err.message);
@@ -40,7 +50,8 @@ const LoginPage = () => {
     return (
         <div className="loginPageMainDiv">
             <div className="loginPart">
-                <strong>Lets Sign In First!</strong>
+                <p><strong>Lets Sign In First!</strong></p>
+                <br/>
                 <Button variant="contained" color="secondary" onClick={() => handleContinueWithGoogleButton()}>
                     Sign In To Google
                 </Button>

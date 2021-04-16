@@ -1,0 +1,12 @@
+.adminOptions{
+    margin: 3rem 1rem;
+}
+
+.topPart{
+    display:flex;
+    justify-content: space-around;
+    width:auto;
+    background:bisque;
+    padding: 1.5rem;
+    border-radius:15px;
+}

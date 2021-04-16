@@ -16,9 +16,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import UserInfoPage from '../UserInfoPage/UserInfoPage';
 
 const Header = () => {
-
-    console.log("in header")
-
     const currentUser = useContext(UserContext);
     return (
         <Router>
@@ -42,24 +39,25 @@ const Header = () => {
                         <Link className="links" to='/dealsPage'>
                             <Button color="primary">Deals</Button>
                         </Link>
-                        <Link className="links" to='/loginPage'>
-                            <Button color="primary">Login</Button>
-                        </Link>
                         {
-                            currentUser[0].image === "" ?  
+                            currentUser[0].image !== "" ?  
                                 <Link className="links" to='/userInfoPage'>
                                     <img className="userImage" src={currentUser[0].image} alt=""/>
                                 </Link>
                             :
-                            currentUser[0].name === "" ? 
+                            currentUser[0].name !== "" ? 
                                 <Link className="links" to='/userInfoPage'>
                                     <p className="userName">{currentUser[0].name}</p>
                                 </Link>
                             :
-                            currentUser[0].email === "" &&
+                            currentUser[0].email !== "" ?
                                 <Link className="links" to='/userInfoPage'>
                                     <p className="userEmail">{currentUser[0].email}</p>
                                 </Link>
+                            :
+                            <Link className="links" to='/loginPage'>
+                                <Button color="primary">Login</Button>
+                            </Link>
                         }
                     </div>
                 </div>
