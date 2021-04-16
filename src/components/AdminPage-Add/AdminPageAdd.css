@@ -1,0 +1,11 @@
+.adminPageAddMainDiv{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.addingProduct{
+    padding:2rem;
+    border-radius: 20px;
+    background:lightsalmon;
+}
