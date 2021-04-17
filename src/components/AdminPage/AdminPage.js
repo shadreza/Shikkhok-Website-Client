@@ -20,8 +20,8 @@ const AdminPage = () => {
         <Router>
             <div className="adminPageMainDiv">
                 {
-                    user[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
-                    :
+                    // user[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
+                    // :
                     <div className="adminDiv">
                         <div className="topPart">
                             <Link to='/adminManagePage'>

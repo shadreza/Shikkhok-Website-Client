@@ -1,12 +1,9 @@
 import { Button } from '@material-ui/core';
+import axios from 'axios';
 import React from 'react';
 import './SinglePrdInfoInManagePage.css';
 
 const SinglePrdInfoInManagePage = (passedParams) => {
-
-    const deletePrd = id => {
-        console.log(id);
-    }
 
     const itemInfo = passedParams.passedInfo[0];
     const itemNo = passedParams.passedInfo[1];
@@ -15,6 +12,20 @@ const SinglePrdInfoInManagePage = (passedParams) => {
     const price = itemInfo.pricePrd;
     const image = itemInfo.imageUrlPrd;
     const id = itemInfo._id;
+
+    const deletePrd = id => {
+        console.log('in delete funciron');
+        const url = `http://localhost:5055/deletePrd/${id}`;
+        axios.delete(url , { params: { id }})
+        .then(res => {
+            alert(`${name} was deleted successfully`)
+            console.log(res);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+    
     return (
         <div className="singlePrdInfoInManagePageMainDiv">
             <p><small>{itemNo}</small></p>

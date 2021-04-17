@@ -11,7 +11,6 @@ const AdminPageManage = () => {
             {  
                 prdItems[0].map(items => {
                     count = count + 1;
-                    console.log(count);
                     return <SinglePrdInfoInManagePage passedInfo={[items,count]}></SinglePrdInfoInManagePage>
                 })
             }

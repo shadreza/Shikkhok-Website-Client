@@ -17,7 +17,6 @@ const useStyles = makeStyles({
   });
 
 const SingleProduct = (passedParams) => {
-    console.log(passedParams);
     const infos = passedParams.defaultProduct;
     const name = infos.namePrd;
     const image = infos.imageUrlPrd;
