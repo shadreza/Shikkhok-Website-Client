@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import './AdminPageAdd.css';
 
 const AdminPageAdd = () => {
+    
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 

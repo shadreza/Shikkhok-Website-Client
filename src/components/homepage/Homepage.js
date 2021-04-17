@@ -4,6 +4,9 @@ import SearchBox from '../SearchBox/SearchBox';
 import './Homepage.css'
 
 const Homepage = () => {
+
+    
+
     return (
         <div className="homePageMainDiv">
             <SearchBox></SearchBox>

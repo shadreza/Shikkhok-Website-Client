@@ -11,11 +11,13 @@ import { UserContext } from '../../App';
 import Homepage from '../homepage/Homepage';
 import OrdersPage from '../OrdersPage/OrdersPage';
 import AdminPage from '../AdminPage/AdminPage';
-import DealsPage from '../DealsPage/DealsPage';
 import LoginPage from '../LoginPage/LoginPage';
 import UserInfoPage from '../UserInfoPage/UserInfoPage';
+import Checkout from '../Checkout/Checkout';
 
 const Header = () => {
+
+    
     const currentUser = useContext(UserContext);
     return (
         <Router>
@@ -36,8 +38,8 @@ const Header = () => {
                         <Link className="links" to='/adminPage'>
                             <Button color="primary">Admin</Button>
                         </Link>
-                        <Link className="links" to='/dealsPage'>
-                            <Button color="primary">Deals</Button>
+                        <Link className="links" to='/checkoutPage'>
+                            <Button color="primary">Checkout</Button>
                         </Link>
                         {
                             currentUser[0].image !== "" ?  
@@ -70,14 +72,17 @@ const Header = () => {
                 <Route path="/adminPage">
                     <AdminPage></AdminPage>
                 </Route>
-                <Route path="/dealsPage">
-                    <DealsPage></DealsPage>
+                <Route path="/checkoutPage">
+                    <Checkout></Checkout>
                 </Route>
                 <Route path="/loginPage">
                     <LoginPage></LoginPage>
                 </Route>
                 <Route path="/userInfoPage">
                     <UserInfoPage></UserInfoPage>
+                </Route>
+                <Route path="/checkout">
+                    <Checkout></Checkout>
                 </Route>
                 <Route path="/">
                     <Homepage></Homepage>

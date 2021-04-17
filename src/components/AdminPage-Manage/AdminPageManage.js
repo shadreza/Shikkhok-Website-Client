@@ -4,6 +4,8 @@ import SinglePrdInfoInManagePage from '../SinglePrdInfoInManagePage/SinglePrdInf
 import './AdminPageManage.css';
 const AdminPageManage = () => {
 
+    
+
     const prdItems = useContext(ProductContext);
     let count = 0;
     return (

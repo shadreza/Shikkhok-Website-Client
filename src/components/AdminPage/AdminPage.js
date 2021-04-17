@@ -6,22 +6,22 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import { UserContext } from '../../App';
-import { HeaderStayingContext} from '../../App';
+import { SelectedItem, UserContext } from '../../App';
 import AdminPageAdd from '../AdminPage-Add/AdminPageAdd';
 import AdminPageManage from '../AdminPage-Manage/AdminPageManage';
 import LoginPage from '../LoginPage/LoginPage';
 import './AdminPage.css';
+
 const AdminPage = () => {
 
     const user = useContext(UserContext);
-
+    
     return (
         <Router>
             <div className="adminPageMainDiv">
                 {
-                    // user[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
-                    // :
+                    user[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
+                    :
                     <div className="adminDiv">
                         <div className="topPart">
                             <Link to='/adminManagePage'>

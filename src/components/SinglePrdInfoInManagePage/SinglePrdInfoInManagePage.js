@@ -14,7 +14,6 @@ const SinglePrdInfoInManagePage = (passedParams) => {
     const id = itemInfo._id;
 
     const deletePrd = id => {
-        console.log('in delete funciron');
         const url = `http://localhost:5055/deletePrd/${id}`;
         axios.delete(url , { params: { id }})
         .then(res => {

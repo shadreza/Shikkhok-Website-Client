@@ -9,7 +9,7 @@ import Header from "./components/header/Header";
 firebase.initializeApp(firebaseConfig);
 
 export const UserContext = createContext([]);
-export const HeaderStayingContext = createContext([]);
+export const SelectedItem = createContext([]);
 export const ProductContext = createContext([]);
 
 function App() {
@@ -23,6 +23,14 @@ function App() {
     })
   }, [products])
 
+  let prd ={
+    namePrd : "",
+    pricePrd : 0,
+    quantityPrd : 0,
+    imageUrlPrd : "",
+    isSetOrNot : false
+    }
+
   const defaultUser = {
     name:"",
     image:"",
@@ -30,15 +38,15 @@ function App() {
     isLoggedInOrNot:false
   }
   const [user , setUser] = useState(defaultUser);
-  const [headerShouldStayOrNot , setHeaderShouldStayOrNot] = useState(true);
+  const [itemSelected , setItemSelected] = useState(prd);
   return (
     <ProductContext.Provider value={[products,setProducts]}>
       <UserContext.Provider value={[user , setUser]}>
-        <HeaderStayingContext.Provider value={[headerShouldStayOrNot , setHeaderShouldStayOrNot]}>
+        <SelectedItem.Provider value={[itemSelected , setItemSelected]}>
           <div className="App">
-            {headerShouldStayOrNot === true && <Header></Header>}
+            <Header></Header>
           </div>
-        </HeaderStayingContext.Provider>
+        </SelectedItem.Provider>
       </UserContext.Provider>
     </ProductContext.Provider>
   );

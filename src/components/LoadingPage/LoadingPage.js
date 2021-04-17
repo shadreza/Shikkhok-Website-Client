@@ -3,6 +3,7 @@ import { CircularProgress } from '@material-ui/core';
 import './LoadingPage.css';
 
 const LoadingPage = () => {
+    
     return (
         <div className="loadingPageMainDiv">
             <CircularProgress disableShrink />
