@@ -17,3 +17,9 @@
 .partInH3{
     color:aliceblue;
 }
+
+.orders{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+}

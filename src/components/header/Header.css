@@ -2,24 +2,8 @@
     text-decoration: none;
 }
 
-.headerMainDiv{
-    display:flex;
-    padding:1rem;
-}
-
-.headerLeftSide{
-    text-align:left;
-    width:20%;
-}
-
 .headerLeftSide h2{
     color:coral;
-}
-
-.headerRightPart{
-    text-align:right;
-    width:80%;
-    margin: 1.25rem;
 }
 
 .userImage{
@@ -29,8 +13,45 @@
     top: -12px;
 }
 
-.navlinks{
-    display:flex;
-    width: 100%;
-    justify-content: flex-end;
+
+
+@media only screen and (max-width: 980px) {
+    .headerLeftSide{
+        text-align:left;
+        margin: 1rem;
+    }
+    
+    .headerRightPart{
+        text-align:right;
+    }
+
+    .navlinks{
+        display:flex;
+        width: 90%;
+        justify-content: flex-start;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .headerMainDiv{
+        display:flex;
+        padding:1rem;
+    }
+
+    .headerLeftSide{
+        text-align:left;
+        width:20%;
+    }
+    
+    .headerRightPart{
+        text-align:right;
+        width:80%;
+        margin: 1.25rem;
+    }
+
+    .navlinks{
+        display:flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
 }

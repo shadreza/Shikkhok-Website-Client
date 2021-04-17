@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import Homepage from "./components/homepage/Homepage";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -11,6 +10,7 @@ firebase.initializeApp(firebaseConfig);
 export const UserContext = createContext([]);
 export const SelectedItem = createContext([]);
 export const ProductContext = createContext([]);
+export const CustomerContext = createContext([]);
 
 function App() {
 
@@ -22,6 +22,15 @@ function App() {
       setProducts(data);
     })
   }, [products])
+
+  const [customers , setCustomers] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:5055/customersHistory')
+    .then(res=>res.json())
+    .then(data => {
+      setCustomers(data);
+    })
+  }, [customers])
 
   let prd ={
     namePrd : "",
@@ -40,15 +49,17 @@ function App() {
   const [user , setUser] = useState(defaultUser);
   const [itemSelected , setItemSelected] = useState(prd);
   return (
-    <ProductContext.Provider value={[products,setProducts]}>
-      <UserContext.Provider value={[user , setUser]}>
-        <SelectedItem.Provider value={[itemSelected , setItemSelected]}>
-          <div className="App">
-            <Header></Header>
-          </div>
-        </SelectedItem.Provider>
-      </UserContext.Provider>
-    </ProductContext.Provider>
+    <CustomerContext.Provider value={[customers , setCustomers]}>
+      <ProductContext.Provider value={[products,setProducts]}>
+        <UserContext.Provider value={[user , setUser]}>
+          <SelectedItem.Provider value={[itemSelected , setItemSelected]}>
+            <div className="App">
+              <Header></Header>
+            </div>
+          </SelectedItem.Provider>
+        </UserContext.Provider>
+      </ProductContext.Provider>
+    </CustomerContext.Provider>
   );
 }
 

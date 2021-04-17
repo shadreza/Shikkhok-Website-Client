@@ -1,0 +1,14 @@
+.singlePrdInfoInManagePageMainDiv{
+    display: inline-block;
+    width: 60%;
+    padding: 1rem;
+    margin: 1rem auto;
+    background:peachpuff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.singlePrdInfoInManagePageMainDiv img{
+    width: 10rem;
+    border-radius: 100%;
+}
