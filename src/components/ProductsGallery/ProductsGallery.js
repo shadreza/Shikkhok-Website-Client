@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from '../../App';
 import SingleProduct from '../SingleProduct/SingleProduct';
 import './ProductsGallery.css';
 
@@ -10,9 +11,16 @@ const defaultProduct = {
 }
 
 const ProductsGallery = () => {
+
+    const prdItems = useContext(ProductContext);
+
     return (
         <div className="productsGalleryMainDiv">
-            <SingleProduct defaultProduct={defaultProduct}></SingleProduct>
+            {
+                prdItems[0].map(items=>
+                    <SingleProduct defaultProduct = {items}></SingleProduct>
+                )
+            }
         </div>
     );
 };

@@ -1,8 +1,9 @@
 .productsGalleryMainDiv{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 1.25rem;
+    grid-gap: 2rem;
     margin : 3rem auto;
     padding: 1rem;
     text-align: center;
+    justify-content: space-evenly;
 }

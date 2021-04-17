@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Homepage from "./components/homepage/Homepage";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -10,8 +10,19 @@ firebase.initializeApp(firebaseConfig);
 
 export const UserContext = createContext([]);
 export const HeaderStayingContext = createContext([]);
+export const ProductContext = createContext([]);
 
 function App() {
+
+  const [products , setProducts] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:5055/products')
+    .then(res=>res.json())
+    .then(data => {
+      setProducts(data);
+    })
+  }, [products])
+
   const defaultUser = {
     name:"",
     image:"",
@@ -21,13 +32,15 @@ function App() {
   const [user , setUser] = useState(defaultUser);
   const [headerShouldStayOrNot , setHeaderShouldStayOrNot] = useState(true);
   return (
-    <UserContext.Provider value={[user , setUser]}>
-      <HeaderStayingContext.Provider value={[headerShouldStayOrNot , setHeaderShouldStayOrNot]}>
-        <div className="App">
-          {headerShouldStayOrNot === true && <Header></Header>}
-        </div>
-      </HeaderStayingContext.Provider>
-    </UserContext.Provider>
+    <ProductContext.Provider value={[products,setProducts]}>
+      <UserContext.Provider value={[user , setUser]}>
+        <HeaderStayingContext.Provider value={[headerShouldStayOrNot , setHeaderShouldStayOrNot]}>
+          <div className="App">
+            {headerShouldStayOrNot === true && <Header></Header>}
+          </div>
+        </HeaderStayingContext.Provider>
+      </UserContext.Provider>
+    </ProductContext.Provider>
   );
 }
 

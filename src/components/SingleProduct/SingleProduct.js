@@ -8,7 +8,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useParams } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -18,10 +17,11 @@ const useStyles = makeStyles({
   });
 
 const SingleProduct = (passedParams) => {
+    console.log(passedParams);
     const infos = passedParams.defaultProduct;
-    const name = infos.name;
-    const image = infos.image;
-    const price = infos.price;
+    const name = infos.namePrd;
+    const image = infos.imageUrlPrd;
+    const price = infos.pricePrd;
     const classes = useStyles();
     return (
         <div className="singleProductMainDiv">

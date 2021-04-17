@@ -30,9 +30,11 @@ const AdminPageAdd = () => {
             .then(res=>{
                 console.log(res);
                 console.log("Successful");
+                alert("Successfully Added");
             })
             .catch(err=>{
                 console.log(err.message);
+                alert("Could Not Be Added");
             })                                                                      
         })
         .catch(function (error) {

@@ -5,7 +5,7 @@ import './Homepage.css'
 
 const Homepage = () => {
     return (
-        <div>
+        <div className="homePageMainDiv">
             <SearchBox></SearchBox>
             <ProductsGallery></ProductsGallery>
         </div>
