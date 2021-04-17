@@ -17,6 +17,11 @@ const ProductsGallery = () => {
     return (
         <div className="productsGalleryMainDiv">
             {
+                prdItems[0].length === 0 ?
+                
+                <h2 className="noPrdText">No Products</h2>
+            
+                :
                 prdItems[0].map(items=>
                     <SingleProduct defaultProduct = {items}></SingleProduct>
                 )

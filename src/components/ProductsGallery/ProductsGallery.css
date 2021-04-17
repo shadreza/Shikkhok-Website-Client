@@ -7,3 +7,14 @@
     text-align: center;
     justify-content: space-evenly;
 }
+
+.noPrd{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.noPrdText{
+    text-align: center;
+    margin: 1rem auto;
+}
