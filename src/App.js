@@ -16,7 +16,7 @@ function App() {
 
   const [products , setProducts] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5055/products')
+    fetch('http://https://fierce-lowlands-85167.herokuapp.com//products')
     .then(res=>res.json())
     .then(data => {
       setProducts(data);
@@ -25,7 +25,7 @@ function App() {
 
   const [customers , setCustomers] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5055/customersHistory')
+    fetch('http://https://fierce-lowlands-85167.herokuapp.com//customersHistory')
     .then(res=>res.json())
     .then(data => {
       setCustomers(data);

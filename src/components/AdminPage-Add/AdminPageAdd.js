@@ -26,7 +26,7 @@ const AdminPageAdd = () => {
             image = response.data.data.display_url;
             Prd.imageUrlPrd=image;
             console.log(Prd);
-            const url = "http://localhost:5055/addProduct";
+            const url = "http://https://fierce-lowlands-85167.herokuapp.com//addProduct";
             axios.post(url,Prd)
             .then(res=>{
                 console.log(res);

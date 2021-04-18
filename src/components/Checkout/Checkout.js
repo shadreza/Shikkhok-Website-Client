@@ -38,7 +38,7 @@ const Checkout = () => {
             boughtPrdImage : image,
             timeOfBought : Date().toLocaleString()
         };
-        const url = "http://localhost:5055/addUserPurchase";
+        const url = "http://https://fierce-lowlands-85167.herokuapp.com//addUserPurchase";
             axios.post(url,UserAndData)
             .then(res=>{
                 console.log(res);

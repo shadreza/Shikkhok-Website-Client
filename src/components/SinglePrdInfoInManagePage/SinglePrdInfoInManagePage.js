@@ -14,7 +14,7 @@ const SinglePrdInfoInManagePage = (passedParams) => {
     const id = itemInfo._id;
 
     const deletePrd = id => {
-        const url = `http://localhost:5055/deletePrd/${id}`;
+        const url = `http://https://fierce-lowlands-85167.herokuapp.com//deletePrd/${id}`;
         axios.delete(url , { params: { id }})
         .then(res => {
             alert(`${name} was deleted successfully`)
