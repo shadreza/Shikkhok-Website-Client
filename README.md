@@ -17,4 +17,6 @@
 
 # git link for server side : https://github.com/Porgramming-Hero-web-course/full-stack-server-shadreza
 
-# live heroku site link :
+# live heroku site link : https://hay-store.web.app/
+
+## heroku not working ... but fully functional in local site
