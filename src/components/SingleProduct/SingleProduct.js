@@ -80,7 +80,7 @@ const SingleProduct = (passedParams) => {
                         <Typography className="priceOfPrd" gutterBottom variant="h5" component="h4">
                             ${price}    
                         </Typography>
-                            <Button className="btnOfPrdBuying" size="small" color="primary" onClick={()=>goToCheckoutPage()}>
+                            <Button className="btnOfPrdBuying" variant="contained" size="small" color="primary" onClick={()=>goToCheckoutPage()}>
                                 Buy
                             </Button>
                     </CardActions>

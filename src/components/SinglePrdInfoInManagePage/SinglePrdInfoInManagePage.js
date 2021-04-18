@@ -29,9 +29,9 @@ const SinglePrdInfoInManagePage = (passedParams) => {
         <div className="singlePrdInfoInManagePageMainDiv">
             <p><small>{itemNo}</small></p>
             <p><strong>{name}</strong></p>
-            <p>{qty}</p>
             <p>{price}</p>
             <img src={image} alt=""/>
+            <p>{qty}</p>
             <Button variant="contained" color="secondary" onClick={(event)=>deletePrd(id)}>
                 Delete Product
             </Button>

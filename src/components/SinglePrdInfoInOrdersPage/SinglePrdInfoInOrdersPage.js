@@ -12,7 +12,7 @@ const SinglePrdInfoInOrdersPage = (passedParams) => {
     const custName = itemInfo.customerName;
     const custEmail = itemInfo.customerEmail;
     return (
-        <div className="singlePrdInfoInManagePageMainDiv">
+        <div className="singlePrdInfoInOrderPageMainDiv">
             <p>product no : <strong>{itemNo}</strong></p>
             <p><strong>{name}</strong></p>
             <p><strong>${price}</strong></p>
