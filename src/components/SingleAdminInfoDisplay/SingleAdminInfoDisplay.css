@@ -1,0 +1,13 @@
+.mainDiv{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content:space-evenly;
+    background: lemonchiffon;
+    padding: 1rem;
+    vertical-align: middle;
+    border-radius: 20px;
+    color: maroon;
+}

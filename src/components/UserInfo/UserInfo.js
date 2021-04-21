@@ -2,7 +2,7 @@ import { Button } from '@material-ui/core';
 import firebase from 'firebase';
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { SelectedItem, UserContext } from '../../App';
+import { SelectedItem, CurrentUserContext } from '../../App';
 import './UserInfo.css';
 
 const defaultUser = {
@@ -15,22 +15,30 @@ const defaultUser = {
 const UserInfo = () => {
 
     let prd ={
-        namePrd : "",
-        pricePrd : 0,
-        quantityPrd : 0,
-        imageUrlPrd : "",
-        isSetOrNot : false
+        name : "",
+        cost : 0,
+        image : "",
+        message: "",
+        isSetOrNot : false,
+        email:"",
+        phoneNumber:"",
+        orderStatus:0,
+        buyerName:"",
+        class:"",
+        instructorName:"",
+        category:"",
+        type:0
         }
-    const selectedPrd = useContext(SelectedItem);
+    const selectedCourse = useContext(SelectedItem);
     
     const history = useHistory();
-    const user = useContext(UserContext);
+    const user = useContext(CurrentUserContext);
     const handleSignOututton = () => {
         firebase.auth().signOut()
         .then(() => {
             alert(user[0].name + " Signed Out");
             user[1](defaultUser);
-            selectedPrd[1](prd);
+            selectedCourse[1](prd);
             history.replace('/');
         })
         .catch((error) => {

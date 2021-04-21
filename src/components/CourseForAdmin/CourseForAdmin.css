@@ -1,0 +1,17 @@
+.courseAdmin{
+    display: grid;
+    grid-template-columns: 10% 20% 20% 20% 20% 10%;
+    justify-content: space-evenly;
+    text-align: left;
+    background:lightcyan;
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.courseAdmin img{
+    width: 40px;
+    border-radius: 100%;
+}

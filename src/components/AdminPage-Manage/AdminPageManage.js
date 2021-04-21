@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../../App';
+import { CourseContext } from '../../App';
 import SinglePrdInfoInManagePage from '../SinglePrdInfoInManagePage/SinglePrdInfoInManagePage';
 import './AdminPageManage.css';
 const AdminPageManage = () => {
 
     
 
-    const prdItems = useContext(ProductContext);
+    const prdItems = useContext(CourseContext);
     let count = 0;
     return (
         <div className="adminPageManage">

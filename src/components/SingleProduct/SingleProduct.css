@@ -15,3 +15,18 @@
 .link{
     text-decoration: none;
 }
+
+.needsMaxHeight500{
+    height: 480px;
+    overflow: scroll;
+}
+
+.needsMaxHeight500::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .needsMaxHeight500 {
+    -ms-overflow-style: none;
+  }
+  

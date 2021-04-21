@@ -16,3 +16,9 @@
     display: flex;
     justify-content: center;
 }
+
+.mustBeBig{
+    text-align: center;
+    margin: 14.25% auto;
+}
+

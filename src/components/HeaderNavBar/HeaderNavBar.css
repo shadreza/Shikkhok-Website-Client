@@ -1,0 +1,40 @@
+#dropdownItemsIdInstructor{
+    color: black;
+}
+
+#dropdownItemsIdSoftwareTeam{
+    color: black;
+}
+
+.navLinks{
+    margin-right: 3rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .titleClass{
+        margin-right: auto;
+    }
+
+    .logInBtn{
+        margin-right: auto;
+    }
+    .userImage{
+        width: 60px;
+        border-radius: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logInBtn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .logInButton{
+        margin: auto;
+    }
+    .userImage{
+        width: 80px;
+        border-radius: 100%;
+    }
+}

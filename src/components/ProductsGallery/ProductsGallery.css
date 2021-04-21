@@ -16,5 +16,12 @@
 
 .noPrdText{
     text-align: center;
-    margin: 1rem auto;
+}
+
+.prdGallery{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

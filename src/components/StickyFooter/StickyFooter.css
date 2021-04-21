@@ -1,0 +1,53 @@
+.stickyFooterMainDIv{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #343a40;
+    width: 100%;
+    color: whitesmoke;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    grid-gap: 1rem;
+}
+
+.footerPart-AboutSite{
+    text-align: left;
+    
+}
+
+.footerPart-SiteLocation{
+    text-align: left;
+}
+
+.links{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.links:hover{
+    color: tomato;
+    text-decoration: none;
+}
+
+.footerPart-SocialPlatforms{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.footerPart-SocialPlatforms a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    width: auto;
+    padding: 0;
+}
+
+.socialLinks:hover{
+    color:royalblue;
+    text-decoration: none;
+    font-size: 1.5rem;
+}

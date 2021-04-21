@@ -8,10 +8,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { SelectedItem, UserContext } from '../../App';
+import { SelectedItem, CurrentUserContext, ShouldBtnBeThereContext } from '../../App';
 import { useHistory } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
 import axios from 'axios';
+import ProductsGallery from '../ProductsGallery/ProductsGallery';
+import SingleProduct from '../SingleProduct/SingleProduct';
 const Checkout = () => {
 
     const useStyles = makeStyles({
@@ -19,26 +21,29 @@ const Checkout = () => {
           maxWidth: 345,
         },
       });
-      const classes = useStyles();
-    const user = useContext(UserContext);
+    const classes = useStyles();
+    const user = useContext(CurrentUserContext);
+    const btnMaintainer = useContext(ShouldBtnBeThereContext);
+    btnMaintainer[1](false);
     const selectedPrd = useContext(SelectedItem);
     const item = selectedPrd[0];
-    const name = item.namePrd;
-    const price = item.pricePrd;
-    const image = item.imageUrlPrd;
-    const userName = user[0].name;
-    const userEmail = user[0].email;
     let history = useHistory();
     const confirmButtonClickd = ()=>{
         const UserAndData = {
-            customerName : userName,
-            customerEmail : userEmail,
-            boughtPrdName : name,
-            boughtPrdPrice : price,
-            boughtPrdImage : image,
-            timeOfBought : Date().toLocaleString()
+            customerName : user[0].name,
+            customerEmail : user[0].email,
+            boughtItemName : item.Name,
+            boughtItemCost : item.cost,
+            boughtItemImage : item.image,
+            timeOfBought : Date().toLocaleString(),            
+            orderStatus:item.orderStatus,
+            message:item.message,
+            class:item.class,
+            instructorName:item.instructorName,
+            category:item.category,
+            type:item.type
         };
-        const url = "http://https://fierce-lowlands-85167.herokuapp.com//addUserPurchase";
+        const url = "https://fierce-lowlands-85167.herokuapp.com/addOrders-list";
             axios.post(url,UserAndData)
             .then(res=>{
                 console.log(res);
@@ -50,11 +55,19 @@ const Checkout = () => {
                 alert("Could Not Be Bought");
             }) 
         let prd ={
-            namePrd : "",
-            pricePrd : 0,
-            quantityPrd : 0,
-            imageUrlPrd : "",
-            isSetOrNot : false
+            Name : "",
+            cost : 0,
+            image : "",
+            isSetOrNot : false,
+            email:"",
+            phoneNumber:"",
+            orderStatus:0,
+            buyerName:"",
+            message:"",
+            class:"",
+            instructorName:"",
+            category:"",
+            type:0
             }
             selectedPrd[1](prd);
             history.replace('/');
@@ -67,25 +80,7 @@ const Checkout = () => {
                 selectedPrd[0].isSetOrNot === false ? <h1 className="noItemsSelected">No Items Selected</h1>
                 :
                 <div className="checkOutPrdDiv">
-                    <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            alt="Contemplative Reptile"
-                            height="250"
-                            image={image}
-                            title={name}
-                            />
-                            <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                <strong>{name}</strong>
-                            </Typography>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                <small>${price}</small>    
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                    <SingleProduct prdInfo = {[item,item.type]}></SingleProduct>
                     <br/><br/>
                     <Button className="btnOfPrdPurchasing" variant="contained" size="small" color="secondary" onClick={()=>confirmButtonClickd()}>
                         Confirm Purchase

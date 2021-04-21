@@ -1,0 +1,15 @@
+.adminsShow{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: flex-start;
+    /* text-align: left; */
+}
+
+.newAdminPage{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

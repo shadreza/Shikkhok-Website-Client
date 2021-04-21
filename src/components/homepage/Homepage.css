@@ -1,3 +1,14 @@
 .homePageMainDiv{
-    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    grid-gap: 2rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .withinGrid{
+        padding: 0.5rem;
+    }
 }

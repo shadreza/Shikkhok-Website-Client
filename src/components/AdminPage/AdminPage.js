@@ -4,9 +4,12 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
   } from "react-router-dom";
-import { SelectedItem, UserContext } from '../../App';
+import { CurrentUserContext , AdminContext } from '../../App';
+import AdminMakesNewAdminPage from '../AdminMakesNewAdminPage/AdminMakesNewAdminPage';
+import AdminManagesCourse from '../AdminManagesCourse/AdminManagesCourse';
 import AdminPageAdd from '../AdminPage-Add/AdminPageAdd';
 import AdminPageManage from '../AdminPage-Manage/AdminPageManage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -14,36 +17,87 @@ import './AdminPage.css';
 
 const AdminPage = () => {
 
-    const user = useContext(UserContext);
+    let history = useHistory();
+
+    const currentUser = useContext(CurrentUserContext);
+    const admins = useContext(AdminContext);
+    let isAdminOrNot = false;
+    const isValidAdminOrNot =()=>{
+        let i=0;
+        for(i=0;i<admins[0].length;i++){
+            const admin = admins[0][i];
+            console.log(admin.email,currentUser[0].email)
+            if(admin.email === currentUser[0].email){
+                isAdminOrNot=true;
+                return;
+            }
+            else{
+                isAdminOrNot = false;
+            }
+        }
+        if(isAdminOrNot===true){
+            return true;
+        }
+        return false;
+    }
     
     return (
         <Router>
             <div className="adminPageMainDiv">
-                {
-                    user[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
-                    :
-                    <div className="adminDiv">
-                        <div className="topPart">
-                            <Link to='/adminManagePage'>
-                                <Button variant="contained" color="primary">
-                                    Manage Product
-                                </Button>
-                            </Link>
-                            <Link to='/adminAddPage'>
-                                <Button variant="contained" color="primary">
-                                    Add Product
-                                </Button>
-                            </Link>                       
-                        </div>       
-                    </div>
-                }
+                {/* { */}
+                    {/* // currentUser[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
+                    //     :
+                    //     isValidAdminOrNot()===false ? <h1 className="mustBeBig">Unauthorized Access!!!</h1>
+                    //         : */}
+                            
+                            
+                            <div className="adminDiv">
+                                <div className="topPart">
+                                    <Link to='/adminManageCourse'>
+                                        <Button variant="contained" color="secondary">
+                                            Manage Course
+                                        </Button>
+                                    </Link>
+                                    <Link to='/adminManageSrvice'>
+                                        <Button variant="contained" color="primary">
+                                            Manage Service
+                                        </Button>
+                                    </Link>
+                                    <Link to='/adminManageTeacher'>
+                                        <Button variant="contained" color="secondary">
+                                            Manage Teachers
+                                        </Button>
+                                    </Link>
+                                    <Link to='/adminManageOrders'>
+                                        <Button variant="contained" color="primary">
+                                            Manage Orders
+                                        </Button>
+                                    </Link> 
+                                    <Link to='/adminManageAdmins'>
+                                        <Button variant="contained" color="secondary">
+                                            Manage Admins
+                                        </Button>
+                                    </Link>                     
+                                </div>      
+                            </div>
+                {/* } */}
+                
             </div>
             <Switch>
-                <Route path="/adminManagePage">
+                <Route path="/adminManageCourse">
+                    <AdminManagesCourse></AdminManagesCourse>
+                </Route>
+                <Route path="/adminManageSrvice">
                     <AdminPageManage></AdminPageManage>
                 </Route>
-                <Route path="/adminAddPage">
-                    <AdminPageAdd></AdminPageAdd>
+                <Route path="/adminManageTeacher">
+                    <AdminPageManage></AdminPageManage>
+                </Route>
+                <Route path="/adminManageOrders">
+                    <AdminPageManage></AdminPageManage>
+                </Route>
+                <Route path="/adminManageAdmins">
+                    <AdminMakesNewAdminPage></AdminMakesNewAdminPage>
                 </Route>
             </Switch>
         </Router>

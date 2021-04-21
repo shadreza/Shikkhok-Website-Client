@@ -7,18 +7,19 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import { UserContext } from '../../App';
+import { CurrentUserContext } from '../../App';
 import Homepage from '../homepage/Homepage';
 import OrdersPage from '../OrdersPage/OrdersPage';
 import AdminPage from '../AdminPage/AdminPage';
 import LoginPage from '../LoginPage/LoginPage';
-import UserInfoPage from '../UserInfoPage/UserInfoPage';
 import Checkout from '../Checkout/Checkout';
+import UserInfoPage from '../UserInfoPage/UserInfoPage';
 
 const Header = () => {
-
     
-    const currentUser = useContext(UserContext);
+    const currentUser = useContext(CurrentUserContext);
+    console.log(currentUser[0].name);
+    
     return (
         <Router>
             <div className="headerMainDiv">
@@ -43,17 +44,17 @@ const Header = () => {
                         </Link>
                         {
                             currentUser[0].image !== "" ?  
-                                <Link className="links" to='/userInfoPage'>
+                                <Link className="links" to='/userInfo'>
                                     <img className="userImage" src={currentUser[0].image} alt=""/>
                                 </Link>
                             :
                             currentUser[0].name !== "" ? 
-                                <Link className="links" to='/userInfoPage'>
+                                <Link className="links" to='/userInfo'>
                                     <p className="userName">{currentUser[0].name}</p>
                                 </Link>
                             :
                             currentUser[0].email !== "" ?
-                                <Link className="links" to='/userInfoPage'>
+                                <Link className="links" to='/userInfo'>
                                     <p className="userEmail">{currentUser[0].email}</p>
                                 </Link>
                             :

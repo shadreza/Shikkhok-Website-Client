@@ -1,0 +1,69 @@
+.upperPortion{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.topBannerLeftSide{
+    margin-right: 2rem;
+    text-align: right;
+    align-self: center;
+}
+
+.relyingColorForTrust{
+    color: skyblue;
+}
+
+.leftAlignment{
+    text-align: left;
+    color:indigo;
+}
+
+.strongColorForFocus{
+    color:orangered;
+}
+
+.impactLine{
+    color: orange;
+}
+
+.topBannerRightSide img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.blueSpan{
+    color: royalblue;
+}
+.greenSpan{
+    color: green;
+}
+
+@media only screen and (max-width: 992px) {
+   .mainHeader{
+       font-size: 18px;
+   }
+   .leftAlignment{
+    font-size: 16px;
+   }
+   .impactLine{
+       margin-top: 1rem;
+   }
+}
+
+@media only screen and (min-width: 992px) {
+    .impactLine{
+        margin-top: 1rem;
+    }
+    .mainHeader{
+        margin-bottom: 2rem;
+    }
+    .leftAlignment{
+        margin-top: 4rem;
+    }
+}
+
+.blackCaptions{
+    background: #000;
+    border-radius: 10px;
+    
+}

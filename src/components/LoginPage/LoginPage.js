@@ -6,20 +6,11 @@ import "firebase/firestore";
 import firebase from 'firebase';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import { SelectedItem, UserContext } from '../../App';
+import {  CurrentUserContext } from '../../App';
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const LoginPage = () => {
-
-    let prd ={
-        namePrd : "",
-        pricePrd : 0,
-        quantityPrd : 0,
-        imageUrlPrd : "",
-        isSetOrNot : false
-        }
-    const selectedPrd = useContext(SelectedItem);
 
     let userData = {
         name: "" ,
@@ -28,7 +19,7 @@ const LoginPage = () => {
         isLoggedInOrNot : false
     }
 
-    const user = useContext(UserContext);
+    const user = useContext(CurrentUserContext);
     let history = useHistory();
 
     if(user[0].isLoggedInOrNot === true) {

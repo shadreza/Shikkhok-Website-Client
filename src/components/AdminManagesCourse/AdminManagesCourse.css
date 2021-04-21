@@ -1,0 +1,14 @@
+.manageCourse{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.inputForm{
+    display: inline-block;
+    grid-template-columns: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+
+}
