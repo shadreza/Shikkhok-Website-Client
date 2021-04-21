@@ -71,17 +71,7 @@ const HeaderNavBar = () => {
                             <LinkContainer to="/admin">
                                 <Nav.Link className="navLinks"><strong>Admin</strong></Nav.Link>
                             </LinkContainer>
-                            <NavDropdown title="Know us" id="collasible-nav-dropdown" className="navLinks">
-                                <NavDropdown.Item >
-                                    <LinkContainer to="/instructors">
-                                        <Nav.Link id="dropdownItemsIdInstructor"><strong>Instructors</strong></Nav.Link>
-                                    </LinkContainer></NavDropdown.Item>
-                                <NavDropdown.Item >
-                                    <LinkContainer to="/softwareTeam">
-                                        <Nav.Link id="dropdownItemsIdSoftwareTeam"><strong>Software Team</strong></Nav.Link>
-                                    </LinkContainer>
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            
                             
                             </Nav>
                             <Nav>
@@ -119,14 +109,6 @@ const HeaderNavBar = () => {
                 <Route path="/admin">
                     <AdminPage></AdminPage>
                 </Route>
-
-                {/* <Route path="/instructors">
-                    <KnowInstructorsPage></KnowInstructorsPage>
-                </Route>
-
-                <Route path="/softwareTeam">
-                    <KnowSoftwareTeamPage></KnowSoftwareTeamPage>
-                </Route> */}
 
                 <Route path="/">
                     <Homepage></Homepage>

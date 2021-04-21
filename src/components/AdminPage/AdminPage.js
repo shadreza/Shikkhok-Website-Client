@@ -44,11 +44,11 @@ const AdminPage = () => {
     return (
         <Router>
             <div className="adminPageMainDiv">
-                {/* { */}
-                    {/* // currentUser[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
-                    //     :
-                    //     isValidAdminOrNot()===false ? <h1 className="mustBeBig">Unauthorized Access!!!</h1>
-                    //         : */}
+                { 
+                     currentUser[0].isLoggedInOrNot === false ? <LoginPage></LoginPage>
+                        :
+                         isValidAdminOrNot()===false ? <h1 className="mustBeBig">Unauthorized Access!!!</h1>
+                             : 
                             
                             
                             <div className="adminDiv">
@@ -56,16 +56,6 @@ const AdminPage = () => {
                                     <Link to='/adminManageCourse'>
                                         <Button variant="contained" color="secondary">
                                             Manage Course
-                                        </Button>
-                                    </Link>
-                                    <Link to='/adminManageSrvice'>
-                                        <Button variant="contained" color="primary">
-                                            Manage Service
-                                        </Button>
-                                    </Link>
-                                    <Link to='/adminManageTeacher'>
-                                        <Button variant="contained" color="secondary">
-                                            Manage Teachers
                                         </Button>
                                     </Link>
                                     <Link to='/adminManageOrders'>
@@ -80,18 +70,12 @@ const AdminPage = () => {
                                     </Link>                     
                                 </div>      
                             </div>
-                {/* } */}
+                }
                 
             </div>
             <Switch>
                 <Route path="/adminManageCourse">
                     <AdminManagesCourse></AdminManagesCourse>
-                </Route>
-                <Route path="/adminManageSrvice">
-                    <AdminPageManage></AdminPageManage>
-                </Route>
-                <Route path="/adminManageTeacher">
-                    <AdminPageManage></AdminPageManage>
                 </Route>
                 <Route path="/adminManageOrders">
                     <AdminPageManage></AdminPageManage>
